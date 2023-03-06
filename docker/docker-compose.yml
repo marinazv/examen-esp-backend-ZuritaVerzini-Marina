@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'movie-dev'
+      MYSQL_USER: 'usr-movie'
+      MYSQL_PASSWORD: 'pwd-movie'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3308:3308'
+    expose:
+      - '3308'
+   
