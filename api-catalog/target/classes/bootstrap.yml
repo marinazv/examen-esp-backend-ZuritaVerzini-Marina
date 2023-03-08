@@ -1,6 +1,6 @@
 spring:
   application:
-    name: eurekaServer
+    name: api-catalog
   cloud:
     config:
       enabled: true
