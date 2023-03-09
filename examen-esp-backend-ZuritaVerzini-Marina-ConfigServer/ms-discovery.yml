@@ -1,0 +1,14 @@
+server:
+  port: 8761
+  
+spring:
+  application:
+    name: ms-discovery
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    
