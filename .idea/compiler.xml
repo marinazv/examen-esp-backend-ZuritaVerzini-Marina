@@ -11,11 +11,13 @@
         <module name="eurekaServer" />
         <module name="configServer" />
         <module name="gateway" />
+        <module name="api-serie" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-catalog" target="17" />
       <module name="api-movie" target="17" />
+      <module name="api-serie" target="17" />
       <module name="configServer" target="17" />
       <module name="eurekaServer" target="17" />
       <module name="gateway" target="17" />
@@ -25,6 +27,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-catalog" options="-parameters" />
       <module name="api-movie" options="-parameters" />
+      <module name="api-serie" options="-parameters" />
       <module name="configServer" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
       <module name="gateway" options="-parameters" />

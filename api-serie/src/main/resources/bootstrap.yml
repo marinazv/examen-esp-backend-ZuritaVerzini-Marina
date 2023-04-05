@@ -1,7 +1,7 @@
 spring:
   application:
-    name: api-catalog
+    name: api-serie
   cloud:
     config:
       enabled: true
-      uri: http://localhost:8888/
+      uri: http://localhost:8888
