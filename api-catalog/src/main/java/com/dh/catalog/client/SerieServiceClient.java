@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @FeignClient(name="api-serie")
-public interface SerieFeign {
+public interface SerieServiceClient {
 
     @GetMapping("/api/v1/series/{genre}")
     List<SerieDto> getByGenre(@PathVariable(value = "genre") String genre);

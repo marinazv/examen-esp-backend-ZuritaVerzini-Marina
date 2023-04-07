@@ -12,4 +12,33 @@ services:
       - '3308:3306'
     expose:
       - '3308'
+
+  mongo-container:
+    image: mongo:4.4.3
+    container_name: mongo-container
+    restart: on-failure
+    environment:
+      MONGO_INITDB_DATABASE: 'catalog'
+      MONGO_INITDB_ROOT_USERNAME: 'user'
+      MONGO_INITDB_ROOT_PASSWORD: 'password'
+    ports:
+      - 27019:27017
+    expose:
+      - 27019
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+  zipkin-server-container:
+    image: openzipkin/zipkin-slim
+    container_name: zipkin-server-container
+    environment:
+      - STORAGE_TYPE=mem
+    ports:
+      - "9411:9411"
+    expose:
+      - 9411
+    depends_on:
+      - storage-aux-container
+  storage-aux-container:
+    image: busybox:1.31.0
+    container_name: storage-aux-container
    
