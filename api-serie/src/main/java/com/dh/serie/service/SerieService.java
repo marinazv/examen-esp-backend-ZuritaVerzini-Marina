@@ -30,6 +30,7 @@ public class SerieService {
     public String create(Serie serie) {
         Serie serieCreada = repository.save(serie);
         NewSerieEventProducer.Data data= new NewSerieEventProducer.Data();
+        data.setId(serieCreada.getId());
         data.setName(serieCreada.getName());
         data.setGenre(serieCreada.getGenre());
         newSerieEventProducer.publishNewSeriePublish(data);

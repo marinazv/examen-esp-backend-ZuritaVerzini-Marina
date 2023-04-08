@@ -72,10 +72,11 @@ public class CatalogService {
         }
     }
     public void saveSerie(NewSerieEventConsumer.Data message){
-        SerieServiceClient.SerieDto newSerie = new SerieServiceClient.SerieDto();
-        newSerie.setGenre(message.getGenre());
-        newSerie.setName(message.getName());
-        catalogSerieRepository.save(newSerie);
+            SerieServiceClient.SerieDto newSerie = new SerieServiceClient.SerieDto();
+            newSerie.setId(message.getId());
+            newSerie.setGenre(message.getGenre());
+            newSerie.setName(message.getName());
+            catalogSerieRepository.save(newSerie);
     }
 
 

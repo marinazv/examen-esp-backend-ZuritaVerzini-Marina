@@ -26,6 +26,9 @@ public class NewSerieEventProducer {
     @Getter
     @Setter
     public static class Data{
+
+       private String id;
+
         private String name;
 
         private String genre;
