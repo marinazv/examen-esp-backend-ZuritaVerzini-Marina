@@ -23,14 +23,24 @@ public class CatalogController {
 		this.catalogService = catalogService;
 	}
 
-	@GetMapping("/movie/{genre}")
+	@GetMapping("/movie/online/{genre}")
 	ResponseEntity<List<MovieServiceClient.MovieDto>> getMoviesGenre(@PathVariable String genre) {
 		return ResponseEntity.ok(catalogService.getMovieByGenre(genre));
 	}
 
-	@GetMapping("/series/{genre}")
+	@GetMapping("/series/online/{genre}")
 	ResponseEntity<List<SerieServiceClient.SerieDto>> getSeriesGenre(@PathVariable String genre) {
 		return ResponseEntity.ok(catalogService.getSerieByGenre(genre));
+	}
+
+	@GetMapping("/movie/offline/{genre}")
+	ResponseEntity<List<MovieServiceClient.MovieDto>> getMoviesGenreOffline(@PathVariable String genre) {
+		return ResponseEntity.ok(catalogService.getMovieByGenreOffline(genre));
+	}
+
+	@GetMapping("/series/offline/{genre}")
+	ResponseEntity<List<SerieServiceClient.SerieDto>> getSeriesGenreOffline(@PathVariable String genre) {
+		return ResponseEntity.ok(catalogService.getSerieByGenreOffline(genre));
 	}
 
 }
